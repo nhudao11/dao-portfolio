@@ -10,17 +10,18 @@ const description =
   "QC Engineer with 4+ years of experience in manual, automation (Playwright, TypeScript) and AI-assisted testing for web and mobile products in real estate, automotive and retail.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(profile.site),
+  // Origin only: Next adds the basePath to generated asset URLs itself.
+  metadataBase: new URL(new URL(profile.site).origin),
   title: { default: title, template: "%s — Trần Như Đào" },
   description,
   applicationName: "DAO.",
   authors: [{ name: profile.name, url: profile.site }],
   creator: profile.name,
   keywords: ["QC Engineer", "QA Engineer", "Software Testing", "Playwright", "TypeScript", "Automation Testing", "AI-assisted QA", "Manual Testing", "Trần Như Đào", "Ho Chi Minh City"],
-  alternates: { canonical: "/" },
+  alternates: { canonical: `${profile.site}/` },
   openGraph: {
     type: "profile",
-    url: "/",
+    url: `${profile.site}/`,
     siteName: "DAO. — Trần Như Đào",
     title,
     description,

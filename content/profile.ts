@@ -4,7 +4,8 @@ import type { ProjectId } from "./types";
 export const profile = {
   name: "Trần Như Đào",
   email: "nhudao1407@gmail.com",
-  site: "https://daotn14.com",
+  // Public URL of the site. The Pages workflow sets NEXT_PUBLIC_SITE_URL; change it when a custom domain is added.
+  site: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nhudao11.github.io/dao-portfolio",
   // LinkedIn / GitHub intentionally omitted: no URLs provided.
 };
 

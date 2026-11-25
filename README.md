@@ -5,7 +5,7 @@ Bilingual (EN / VI) personal portfolio for **Trần Như Đào**, QC Engineer �
 Design concept: **"The Quality Mindset"** — an editorial, Swiss-inspired page that reads like a well-written test plan. Lime means *passed*, orange means *investigate*.
 
 - **Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS 3 · Framer Motion · Lucide · `next/font/local`
-- **Domain:** https://daotn14.com
+- **Live:** https://nhudao11.github.io/dao-portfolio/ (custom domain can be added later)
 - **Content source:** the CV only — no invented metrics, screenshots or achievements.
 
 ## Requirements
@@ -34,14 +34,22 @@ The site is a **static export** (`next.config.ts` → `output: "export"`): `npm 
 
 ### GitHub Pages (configured)
 
-`.github/workflows/deploy.yml` builds and publishes `out/` on every push to `main`. `public/CNAME` sets the custom domain `daotn14.com`.
+Live at **https://nhudao11.github.io/dao-portfolio/**. `.github/workflows/deploy.yml` builds and publishes `out/` on every push to `main`.
 
-1. Push this repository to GitHub (branch `main`).
-   - **Private repositories can use GitHub Pages only on a paid plan** (GitHub Pro, Team or Enterprise). On the free plan, make the repository public, or deploy with Vercel instead (below).
-2. Repository → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Open the **Actions** tab and wait for "Deploy to GitHub Pages" to finish (re-run it once if it ran before step 2).
-4. **Settings → Pages → Custom domain**: enter `daotn14.com`, save.
-5. At your domain registrar, create DNS records:
+The workflow sets two variables because the site lives in a sub-folder:
+
+```yaml
+PAGES_BASE_PATH: /dao-portfolio
+NEXT_PUBLIC_SITE_URL: https://nhudao11.github.io/dao-portfolio
+```
+
+Repository settings: public repository; **Settings → Pages → Source: GitHub Actions**; no custom domain.
+
+#### Adding a custom domain later (e.g. daotn14.com)
+
+1. In `deploy.yml` set `PAGES_BASE_PATH: ""` and `NEXT_PUBLIC_SITE_URL: https://daotn14.com`, then push.
+2. **Settings → Pages → Custom domain**: enter the domain and save.
+3. At the registrar, create DNS records:
    | Type | Name | Value |
    | --- | --- | --- |
    | A | @ | 185.199.108.153 |
@@ -49,11 +57,11 @@ The site is a **static export** (`next.config.ts` → `output: "export"`): `npm 
    | A | @ | 185.199.110.153 |
    | A | @ | 185.199.111.153 |
    | CNAME | www | nhudao11.github.io |
-6. Once DNS has propagated (minutes to a few hours), tick **Enforce HTTPS** in Settings → Pages.
+4. When the domain loads, tick **Enforce HTTPS**.
 
 ### Vercel (alternative, works with private repos for free)
 
-Import the repository at https://vercel.com/new and deploy with the defaults; then add `daotn14.com` under Project → Settings → Domains and create the DNS records Vercel shows. If you use Vercel, delete `public/CNAME` and `.github/workflows/deploy.yml`.
+Import the repository at https://vercel.com/new and deploy with the defaults; then add `daotn14.com` under Project → Settings → Domains and create the DNS records Vercel shows. If you use Vercel, delete `.github/workflows/deploy.yml` (Vercel needs no base path).
 
 ## Editing content
 
@@ -87,7 +95,7 @@ components/
   graphics/             TestRunPanel, WorkflowRail, AbstractUI (5 illustrative project visuals)
 content/                en.ts, vi.ts, profile.ts, types.ts, index.ts
 lib/                    i18n.tsx, useActiveSection.ts, motion.ts, cn.ts
-public/                 logo SVGs, CNAME (custom domain), .nojekyll
+public/                 logo SVGs, .nojekyll
 assets/projects/        HouseNow screenshots (agent details blurred)
 .github/workflows/      GitHub Pages deployment
 tailwind.config.ts      design tokens mapped to Tailwind
