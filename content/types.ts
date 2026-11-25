@@ -1,6 +1,6 @@
 export type Locale = "en" | "vi";
 
-export type SectionId = "about" | "ai-workflow" | "experience" | "projects" | "process" | "contact";
+export type SectionId = "top" | "about" | "ai-workflow" | "experience" | "projects" | "process" | "contact";
 
 export type ProjectId = "housenow" | "nowauto" | "yakult-bhtt" | "yakult-kt" | "yakult-td";
 

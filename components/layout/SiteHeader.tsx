@@ -41,7 +41,7 @@ export function SiteHeader() {
   }, [open]);
 
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1024px)");
+    const mq = window.matchMedia("(min-width: 1280px)");
     const close = () => mq.matches && setOpen(false);
     mq.addEventListener("change", close);
     return () => mq.removeEventListener("change", close);
@@ -63,10 +63,10 @@ export function SiteHeader() {
             <Logo className="h-[22px]" />
           </a>
 
-          <nav aria-label="Primary" className="hidden lg:block">
-            <ul className="flex items-center gap-7">
+          <nav aria-label="Primary" className="hidden xl:block">
+            <ul className="flex items-center gap-6">
               {t.nav.map((item, i) => {
-                const isActive = active === item.id;
+                const isActive = active === item.id || (item.id === "top" && active === null);
                 return (
                   <li key={item.id}>
                     <a
@@ -78,7 +78,7 @@ export function SiteHeader() {
                       )}
                     >
                       <span className={cn("h-1.5 w-1.5 rounded-pill bg-ink transition-transform duration-150", isActive ? "scale-100" : "scale-0")} aria-hidden />
-                      <span className="text-muted">{String(i + 2).padStart(2, "0")}</span>
+                      <span className="text-muted">{String(i + 1).padStart(2, "0")}</span>
                       {item.label}
                     </a>
                   </li>
@@ -98,7 +98,7 @@ export function SiteHeader() {
             <button
               ref={menuButton}
               type="button"
-              className="inline-flex h-11 w-11 items-center justify-center border border-line-strong lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center border border-line-strong xl:hidden"
               aria-expanded={open}
               aria-controls="mobile-menu"
               onClick={() => setOpen(true)}
@@ -117,7 +117,7 @@ export function SiteHeader() {
             role="dialog"
             aria-modal="true"
             aria-label={t.meta.menu}
-            className="on-panel fixed inset-0 z-[70] flex flex-col bg-panel text-on-panel lg:hidden"
+            className="on-panel fixed inset-0 z-[70] flex flex-col bg-panel text-on-panel xl:hidden"
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={reduce ? undefined : { opacity: 0 }}
@@ -146,7 +146,7 @@ export function SiteHeader() {
                     transition={{ duration: 0.36, ease: EASE_OUT, delay: 0.04 * i }}
                   >
                     <a href={`#${item.id}`} onClick={() => setOpen(false)} className="flex items-baseline gap-4 py-4">
-                      <span className="label text-on-panel-muted">{String(i + 2).padStart(2, "0")}</span>
+                      <span className="label text-on-panel-muted">{String(i + 1).padStart(2, "0")}</span>
                       <span className="font-display text-[clamp(32px,9vw,48px)] font-medium leading-none tracking-[-0.035em]">{item.label}</span>
                     </a>
                   </motion.li>

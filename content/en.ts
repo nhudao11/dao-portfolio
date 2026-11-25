@@ -3,6 +3,7 @@ import type { SiteContent } from "./types";
 export const en: SiteContent = {
   meta: { skip: "Skip to content", menu: "Menu", close: "Close", langLabel: "Language" },
   nav: [
+    { id: "top", label: "Intro" },
     { id: "about", label: "About" },
     { id: "ai-workflow", label: "AI Workflow" },
     { id: "experience", label: "Experience" },

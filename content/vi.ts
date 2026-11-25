@@ -3,6 +3,7 @@ import type { SiteContent } from "./types";
 export const vi: SiteContent = {
   meta: { skip: "Đến nội dung chính", menu: "Menu", close: "Đóng", langLabel: "Ngôn ngữ" },
   nav: [
+    { id: "top", label: "Mở đầu" },
     { id: "about", label: "Giới thiệu" },
     { id: "ai-workflow", label: "Quy trình AI" },
     { id: "experience", label: "Kinh nghiệm" },
