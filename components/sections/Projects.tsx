@@ -127,7 +127,7 @@ function CaseBody({ facts, copy, labels }: { facts: ProjectFacts; copy: ProjectC
 function FeaturedProject({ facts, copy, labels, badge, shots }: { facts: ProjectFacts; copy: ProjectCopy; labels: Labels; badge: string; shots: SiteContent["projects"]["screenshots"] }) {
   return (
     <article id={`project-${facts.id}`} aria-labelledby={`title-${facts.id}`} className="mt-10 scroll-mt-[calc(var(--header-h)+16px)] lg:mt-14">
-      <div className="grid-12 gap-y-10 border-t border-line-strong pt-5">
+      <div className="grid-12 gap-y-10">
         <div className="col-span-4 md:col-span-12 lg:col-span-5">
           <Reveal>
             <p className="label inline-flex items-center gap-2 bg-lime px-2 py-1 text-[#191b19]">

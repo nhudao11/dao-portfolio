@@ -34,7 +34,7 @@ export function AIWorkflow() {
       </div>
 
       <div className="mt-14 lg:mt-20">
-        <div className="flex items-baseline justify-between border-t border-line-strong pt-4">
+        <div className="flex items-baseline justify-between border-t border-line pt-4">
           <p className="label flex items-center gap-2 text-ink">
             <Sparkles className="h-3.5 w-3.5" strokeWidth={1.75} aria-hidden />
             {a.useCasesLabel}

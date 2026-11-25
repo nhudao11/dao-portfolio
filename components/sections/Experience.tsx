@@ -17,7 +17,7 @@ export function Experience() {
 
       <ol className="mt-10 space-y-12 lg:mt-14 lg:space-y-16">
         {e.companies.map((c, ci) => (
-          <li key={c.company} className="grid-12 border-t border-line-strong pt-5">
+          <li key={c.company} className="grid-12 border-t border-line pt-5">
             {/* Period rail */}
             <div className="col-span-4 mb-6 md:col-span-3 md:mb-0">
               <div className="md:sticky md:top-[calc(var(--header-h)+24px)]">

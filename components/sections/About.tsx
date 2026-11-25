@@ -45,7 +45,7 @@ export function About() {
 
       {/* Expertise — 3 × 3 index, details always visible */}
       <div className="mt-14 lg:mt-20">
-        <div className="flex items-baseline justify-between border-t border-line-strong pt-4">
+        <div className="flex items-baseline justify-between border-t border-line pt-4">
           <p className="label text-ink">{a.expertiseLabel}</p>
           <p className="label text-muted">{String(a.expertise.length).padStart(2, "0")}</p>
         </div>
