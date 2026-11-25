@@ -17,12 +17,12 @@ export function HouseNowShowcase({ caption, webAlt, appAlt }: { caption: string;
             </span>
             <span className="flex-1 truncate bg-[#2a2d2a] px-2.5 py-1 font-mono text-[11px] leading-4 text-on-panel-muted">housenow.com.vn/can-ho-chung-cu</span>
           </div>
-          <Image src={webShot} alt={webAlt} sizes="(min-width: 1024px) 50vw, 90vw" className="block h-auto w-full" placeholder="blur" />
+          <Image src={webShot} alt={webAlt} loading="eager" sizes="(min-width: 1024px) 50vw, 90vw" className="block h-auto w-full" placeholder="blur" />
         </div>
 
         {/* Phone */}
         <div className="absolute bottom-0 right-0 w-[30%] min-w-[118px] border-[5px] border-ink bg-ink shadow-[8px_8px_0_0_var(--lime)]">
-          <Image src={appShot} alt={appAlt} sizes="(min-width: 1024px) 18vw, 32vw" className="block h-auto w-full" placeholder="blur" />
+          <Image src={appShot} alt={appAlt} loading="eager" sizes="(min-width: 1024px) 18vw, 32vw" className="block h-auto w-full" placeholder="blur" />
         </div>
       </div>
       <figcaption className="label mt-3 border-t border-line pt-2 text-muted">{caption}</figcaption>

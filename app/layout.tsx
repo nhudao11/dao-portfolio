@@ -50,9 +50,14 @@ const jsonLd = {
   knowsAbout: ["Manual Testing", "Automation Testing", "Playwright", "TypeScript", "AI-assisted QA", "Requirement Analysis", "Test Design"],
 };
 
+const revealScript = `(function(){try{var d=document.documentElement;if(!("IntersectionObserver" in window))return;d.classList.add("js-reveal");var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target);}});},{rootMargin:"0px 0px -8% 0px"});var scan=function(){document.querySelectorAll(".reveal:not(.is-in)").forEach(function(el){io.observe(el);});};new MutationObserver(scan).observe(d,{childList:true,subtree:true});document.addEventListener("DOMContentLoaded",scan);}catch(e){document.documentElement.classList.remove("js-reveal");}})();`;
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={fontVariables}>
+    <html lang="en" className={fontVariables} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: revealScript }} />
+      </head>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <LanguageProvider>{children}</LanguageProvider>

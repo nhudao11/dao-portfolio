@@ -1,23 +1,16 @@
-"use client";
+import type { CSSProperties, ReactNode } from "react";
+import { cn } from "@/lib/cn";
 
-import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
-import { revealVariants } from "@/lib/motion";
-
-/** Fades content up 16px the first time it enters the viewport. No motion when reduced. */
+/**
+ * Fades content up when it first scrolls into view.
+ * Progressive enhancement: content is VISIBLE by default. It is only hidden once the tiny
+ * inline script in app/layout.tsx has started an IntersectionObserver (html.js-reveal),
+ * so the page never goes blank if React fails to load or is slow.
+ */
 export function Reveal({ children, delay = 0, className }: { children: ReactNode; delay?: number; className?: string }) {
-  const reduce = useReducedMotion();
-  if (reduce) return <div className={className}>{children}</div>;
   return (
-    <motion.div
-      className={className}
-      variants={revealVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-      custom={delay}
-    >
+    <div className={cn("reveal", className)} style={{ "--reveal-delay": `${Math.round(delay * 60)}ms` } as CSSProperties} suppressHydrationWarning>
       {children}
-    </motion.div>
+    </div>
   );
 }

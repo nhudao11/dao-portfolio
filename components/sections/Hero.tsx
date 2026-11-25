@@ -1,27 +1,16 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import type { CSSProperties } from "react";
 import { useI18n } from "@/lib/i18n";
 import { profile } from "@/content/profile";
 import { ButtonLink } from "@/components/ui/Button";
 import { TestRunPanel } from "@/components/graphics/TestRunPanel";
-import { EASE_OUT } from "@/lib/motion";
 
 export function Hero() {
   const { t, locale } = useI18n();
   const h = t.hero;
-  const reduce = useReducedMotion();
-
-  const line = (i: number) =>
-    reduce
-      ? {}
-      : {
-          initial: { y: "105%" },
-          animate: { y: "0%" },
-          transition: { duration: 0.8, ease: EASE_OUT, delay: 0.1 + i * 0.09 },
-        };
-  const fade = (i: number) =>
-    reduce ? {} : { initial: { opacity: 0, y: 12 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5, ease: EASE_OUT, delay: 0.45 + i * 0.07 } };
+  // Pure-CSS entrance (runs even before/without JavaScript); see .anim-* in globals.css
+  const d = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
   const last = h.headline[2];
   const cut = last.lastIndexOf(h.highlight);
@@ -33,7 +22,7 @@ export function Hero() {
       <div className="plus-grid pointer-events-none absolute right-0 top-[calc(var(--header-h)+150px)] hidden h-[360px] w-[34%] opacity-70 [mask-image:linear-gradient(to_bottom,#000_50%,transparent)] lg:block" aria-hidden />
       <div className="container-page relative">
         {/* Identity row — a spec sheet header */}
-        <motion.div {...fade(0)} className="grid-12 border-t border-line-strong">
+        <div className="anim-fade-up grid-12 border-t border-line-strong" style={d(450)}>
           <p className="label col-span-4 pt-4 text-ink md:col-span-3">{h.index}</p>
           <dl className="col-span-4 mt-4 grid grid-cols-2 gap-x-4 gap-y-4 md:col-span-9 md:mt-0 md:grid-cols-4 md:gap-x-6">
             {[
@@ -48,13 +37,13 @@ export function Hero() {
               </div>
             ))}
           </dl>
-        </motion.div>
+        </div>
 
         {/* Headline */}
         <h1 id="hero-title" key={locale} className={`mt-10 text-display-xl md:mt-12 lg:mt-14 ${locale === "vi" ? "!leading-[1.04]" : ""}`}>
           {h.headline.map((text, i) => (
             <span key={i} className="-mt-[0.2em] block overflow-hidden pb-[0.06em] pt-[0.2em]">
-              <motion.span className="block" {...line(i)}>
+              <span className="anim-rise block" style={d(100 + i * 90)}>
                 {i < 2 ? (
                   text
                 ) : (
@@ -66,14 +55,14 @@ export function Hero() {
                     </span>
                   </>
                 )}
-              </motion.span>
+              </span>
             </span>
           ))}
         </h1>
 
         {/* Supporting + panel */}
         <div className="grid-12 mt-10 gap-y-12 lg:mt-12">
-          <motion.div {...fade(1)} className="col-span-4 md:col-span-6 lg:col-span-5">
+          <div className="anim-fade-up col-span-4 md:col-span-6 lg:col-span-5" style={d(520)}>
             <p className="max-w-[30rem] text-lead">{h.supporting}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <ButtonLink href="#projects" variant="primary" icon="up-right">
@@ -94,15 +83,15 @@ export function Hero() {
                 ))}
               </ul>
             </div>
-          </motion.div>
-          <motion.div {...fade(2)} className="col-span-4 md:col-span-6 lg:col-span-6 lg:col-start-7 xl:col-span-5 xl:col-start-8">
+          </div>
+          <div className="anim-fade-up col-span-4 md:col-span-6 lg:col-span-6 lg:col-start-7 xl:col-span-5 xl:col-start-8" style={d(590)}>
             <TestRunPanel />
             <p className="mt-4 max-w-[34rem] font-mono text-[12px] leading-[18px] text-muted">{h.run.caption}</p>
-          </motion.div>
+          </div>
         </div>
 
         {/* Stats */}
-        <motion.dl {...fade(3)} className="mt-12 grid grid-cols-2 border-t border-line-strong md:grid-cols-4 lg:mt-16">
+        <dl className="anim-fade-up mt-12 grid grid-cols-2 border-t border-line-strong md:grid-cols-4 lg:mt-16" style={d(660)}>
           {h.stats.map((s, i) => (
             <div key={s.label} className={`flex flex-col pb-2 pt-4 ${i % 2 === 1 ? "border-l border-line pl-4" : "pr-4"} ${i >= 2 ? "max-md:mt-6" : ""} md:pr-6 ${i > 0 ? "md:border-l md:border-line md:pl-6" : ""}`}>
               <dt className="label order-2 mt-3 text-muted">
@@ -112,7 +101,7 @@ export function Hero() {
               <dd className="order-1 font-display text-[clamp(40px,4.4vw,56px)] font-medium leading-none tracking-[-0.04em]">{s.value}</dd>
             </div>
           ))}
-        </motion.dl>
+        </dl>
       </div>
     </section>
   );
