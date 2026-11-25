@@ -17,6 +17,19 @@
   --on-panel-muted: #a9a79f;
   --panel-line: #383b37;
   --focus-ring: #191b19;
+  /* Same colours as RGB channels, so Tailwind opacity modifiers (bg-surface/95) work */
+  --surface-rgb: 244 241 233;
+  --surface-raised-rgb: 251 249 244;
+  --ink-rgb: 25 27 25;
+  --ink-muted-rgb: 91 93 87;
+  --line-rgb: 218 216 208;
+  --line-strong-rgb: 25 27 25;
+  --lime-rgb: 215 255 88;
+  --orange-rgb: 242 166 90;
+  --panel-rgb: 25 27 25;
+  --on-panel-rgb: 244 241 233;
+  --on-panel-muted-rgb: 169 167 159;
+  --panel-line-rgb: 56 59 55;
   --header-h: 72px;
   color-scheme: light;
 }

@@ -54,7 +54,7 @@ export function SiteHeader() {
       </a>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 h-[var(--header-h)] border-b bg-surface/95 backdrop-blur-[2px] transition-colors duration-150",
+          "fixed inset-x-0 top-0 z-50 h-[var(--header-h)] border-b bg-surface transition-colors duration-150",
           scrolled ? "border-line" : "border-transparent",
         )}
       >
