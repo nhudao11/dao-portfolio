@@ -45,6 +45,7 @@ const jsonLd = {
   name: profile.name,
   jobTitle: "QC Engineer",
   email: `mailto:${profile.email}`,
+  telephone: "+84776138500",
   url: profile.site,
   knowsAbout: ["Manual Testing", "Automation Testing", "Playwright", "TypeScript", "AI-assisted QA", "Requirement Analysis", "Test Design"],
 };

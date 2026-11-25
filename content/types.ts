@@ -176,6 +176,7 @@ export interface SiteContent {
     title: string;
     lead: string;
     emailLabel: string;
+    phoneLabel: string;
     copy: string;
     copied: string;
     write: string;

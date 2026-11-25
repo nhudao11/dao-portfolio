@@ -39,7 +39,7 @@ const config: Config = {
         h2: ["clamp(28px, 3.4vw, 36px)", { lineHeight: "1.08", letterSpacing: "-0.025em" }],
         h1: ["clamp(36px, 5.5vw, 56px)", { lineHeight: "1", letterSpacing: "-0.035em" }],
         "display-l": ["clamp(44px, 7vw, 80px)", { lineHeight: "0.95", letterSpacing: "-0.04em" }],
-        "display-xl": ["clamp(42px, 7.4vw, 108px)", { lineHeight: "0.92", letterSpacing: "-0.045em" }],
+        "display-xl": ["clamp(38px, 6.3vw, 92px)", { lineHeight: "0.92", letterSpacing: "-0.045em" }],
       },
       borderRadius: { xs: "2px", pill: "999px" },
       spacing: { 18: "72px", 24: "96px", 40: "160px" },

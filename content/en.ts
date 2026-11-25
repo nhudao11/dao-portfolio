@@ -335,6 +335,7 @@ export const en: SiteContent = {
     title: "Have a good project in mind?",
     lead: "Let's talk about quality, technology and better products.",
     emailLabel: "Email",
+    phoneLabel: "Phone",
     copy: "Copy",
     copied: "Copied",
     write: "Write to me",

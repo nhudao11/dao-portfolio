@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUp, Check, Copy, Mail } from "lucide-react";
+import { ArrowUp, Check, Copy, Mail, Phone } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { profile } from "@/content/profile";
 import { Logo } from "@/components/ui/Logo";
@@ -59,6 +59,17 @@ export function Contact() {
                 <span className="sr-only" aria-live="polite">
                   {copied ? c.copied : ""}
                 </span>
+              </div>
+
+              <p className="label mt-8 text-on-panel-muted">{c.phoneLabel}</p>
+              <div className="mt-3">
+                <a
+                  href={profile.phoneHref}
+                  className="inline-flex items-center gap-3 border-b-2 border-lime font-display text-[clamp(24px,4vw,44px)] font-medium leading-tight tracking-[-0.02em] transition-colors hover:bg-lime hover:text-[#191b19]"
+                >
+                  <Phone className="h-[0.6em] w-[0.6em]" strokeWidth={1.5} aria-hidden />
+                  {profile.phone}
+                </a>
               </div>
               <div className="mt-10">
                 <ButtonLink href={`mailto:${profile.email}`} variant="primary" icon="none">

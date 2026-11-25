@@ -327,6 +327,7 @@ export const vi: SiteContent = {
     title: "Bạn đang có một dự án hay?",
     lead: "Cùng trò chuyện về chất lượng, công nghệ và những sản phẩm tốt hơn.",
     emailLabel: "Email",
+    phoneLabel: "Điện thoại",
     copy: "Sao chép",
     copied: "Đã chép",
     write: "Gửi email",
