@@ -133,7 +133,7 @@ function FeaturedProject({ facts, copy, labels, badge, shots }: { facts: Project
             <p className="label inline-flex items-center gap-2 bg-lime px-2 py-1 text-[#191b19]">
               01 · {badge}
             </p>
-            <h3 id={`title-${facts.id}`} className="mt-6 text-display-l">
+            <h3 id={`title-${facts.id}`} className="mt-5 text-display-l">
               {facts.name}
             </h3>
             <p className="label mt-4 text-muted">{copy.type}</p>
