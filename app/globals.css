@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colour tokens — "DAO. — The Quality Mindset" design system */
+:root {
+  --surface: #f4f1e9;
+  --surface-raised: #fbf9f4;
+  --ink: #191b19;
+  --ink-muted: #5b5d57;
+  --line: #dad8d0;
+  --line-strong: #191b19;
+  --lime: #d7ff58;
+  --orange: #f2a65a;
+  --panel: #191b19;
+  --on-panel: #f4f1e9;
+  --on-panel-muted: #a9a79f;
+  --panel-line: #383b37;
+  --focus-ring: #191b19;
+  --header-h: 72px;
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 8px);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-surface text-ink font-sans text-body antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv11", "ss01";
+  }
+  ::selection { background: var(--lime); color: #191b19; }
+  :focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+  .on-panel :focus-visible { --focus-ring: #d7ff58; }
+  h1, h2, h3, h4 { @apply font-display font-medium; text-wrap: balance; }
+  p { text-wrap: pretty; }
+}
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-page px-6 lg:px-12; }
+  .label { @apply font-mono text-label uppercase; }
+  .grid-12 { @apply grid grid-cols-4 gap-x-4 md:grid-cols-12 md:gap-x-6; }
+  .hairline { @apply border-t border-line-strong; }
+  /* Plus-grid pattern: inspector registration marks at a 24px pitch */
+  .plus-grid { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M7.5 12h9M12 7.5v9' stroke='%23DAD8D0' stroke-width='1'/%3E%3C/svg%3E"); background-size: 24px 24px; }
+  .plus-grid-panel { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M7.5 12h9M12 7.5v9' stroke='%23383B37' stroke-width='1'/%3E%3C/svg%3E"); background-size: 24px 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* Each family = Latin face + Vietnamese face (unicode-range split) + fallbacks */
+:root {
+  --font-display: var(--font-display-latin), var(--font-display-vi), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sans-latin), var(--font-sans-vi), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-latin), var(--font-mono-vi), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+svg [role="button"]:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
