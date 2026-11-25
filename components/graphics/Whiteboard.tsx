@@ -176,8 +176,8 @@ export function TitleCard({ title, subtitle, w = 330 }: { title: string; subtitl
 export function Canvas({ width, height, label, swipe, children }: { width: number; height: number; label: string; swipe: string; children: ReactNode }) {
   return (
     <figure className="relative">
-      <div className="overflow-x-auto border border-line bg-[#F1EEE6] [scrollbar-width:thin]">
-        <svg viewBox={`0 0 ${width} ${height}`} className="block h-auto w-full min-w-[760px]" role="img" aria-label={label}>
+      <div className="overflow-x-auto border border-line bg-[#F1EEE6] [scrollbar-width:thin]" style={{ backgroundImage: "radial-gradient(#C9C6BC 1.1px, transparent 1.2px)", backgroundSize: "22px 22px" }}>
+        <svg viewBox={`0 0 ${width} ${height}`} className="mx-auto block h-auto w-full min-w-[760px] max-w-[1040px]" role="img" aria-label={label}>
           <defs>
             <pattern id="wb-dots" width="22" height="22" patternUnits="userSpaceOnUse">
               <circle cx="2" cy="2" r="1.1" fill="#C9C6BC" />
@@ -189,7 +189,7 @@ export function Canvas({ width, height, label, swipe, children }: { width: numbe
               <path d="M0 0L10 5L0 10z" fill="var(--orange)" />
             </marker>
           </defs>
-          <rect width={width} height={height} fill="url(#wb-dots)" />
+
           {children}
         </svg>
       </div>

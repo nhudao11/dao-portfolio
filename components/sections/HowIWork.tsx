@@ -34,7 +34,7 @@ export function HowIWork() {
     <Section id="process" labelledBy="process-title" className="border-t border-line bg-raised">
       <SectionHeader id="process-title" index={p.index} title={p.title} lead={p.lead} />
 
-      <div className="lg:ml-[calc(25%+6px)]">
+      <div>
       <p className="label mt-10 text-muted lg:mt-14">{p.hint}</p>
       <div className="mt-4">
         <ProcessDiagram active={active} onSelect={setActive} />

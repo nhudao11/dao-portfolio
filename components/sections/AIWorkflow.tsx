@@ -19,11 +19,11 @@ export function AIWorkflow() {
       <SectionHeader id="ai-title" index={a.index} title={a.title} lead={a.lead} />
 
       <div className="mt-10 lg:mt-14">
-        <Reveal className="lg:ml-[calc(25%+6px)]">
+        <Reveal>
           <AIFlowDiagram />
         </Reveal>
         {/* The six stages, in reading order, for screen readers and quick scanning */}
-        <ol className="mt-4 flex flex-wrap gap-x-3 gap-y-1 font-mono text-[12px] leading-5 text-muted lg:ml-[calc(25%+6px)]" aria-label={a.railLabel}>
+        <ol className="mt-4 flex flex-wrap gap-x-3 gap-y-1 font-mono text-[12px] leading-5 text-muted" aria-label={a.railLabel}>
           {a.steps.map((s, i) => (
             <li key={s.title}>
               {String(i + 1).padStart(2, "0")} {s.title}
