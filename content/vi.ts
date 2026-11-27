@@ -13,7 +13,7 @@ export const vi: SiteContent = {
   contactCta: "Liên hệ",
 
   hero: {
-    index: "01 / Giới thiệu",
+    index: "01 / Mở đầu",
     role: "QC Engineer",
     location: "TP. Hồ Chí Minh",
     identity: { name: "Họ tên", role: "Vị trí", experience: "Kinh nghiệm", location: "Làm việc tại", years: "Hơn 4 năm" },

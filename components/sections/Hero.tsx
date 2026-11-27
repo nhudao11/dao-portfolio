@@ -5,6 +5,7 @@ import { useI18n } from "@/lib/i18n";
 import { profile } from "@/content/profile";
 import { ButtonLink } from "@/components/ui/Button";
 import { TestRunPanel } from "@/components/graphics/TestRunPanel";
+import { SectionTitle, splitIndex } from "@/components/ui/SectionHeader";
 
 export function Hero() {
   const { t, locale } = useI18n();
@@ -19,19 +20,19 @@ export function Hero() {
 
   return (
     <section id="top" aria-labelledby="hero-title" className="relative overflow-hidden pb-12 pt-[calc(var(--header-h)+24px)] lg:pb-16 lg:pt-[calc(var(--header-h)+40px)]">
-      <div className="plus-grid pointer-events-none absolute right-0 top-[calc(var(--header-h)+150px)] hidden h-[360px] w-[34%] opacity-70 [mask-image:linear-gradient(to_bottom,#000_50%,transparent)] lg:block" aria-hidden />
+      <div className="plus-grid pointer-events-none absolute right-0 top-[calc(var(--header-h)+240px)] hidden h-[360px] w-[34%] opacity-70 [mask-image:linear-gradient(to_bottom,#000_50%,transparent)] lg:block" aria-hidden />
       <div className="container-page relative">
-        {/* Identity row — a spec sheet header */}
-        <div className="anim-fade-up grid-12 border-t border-line-strong" style={d(450)}>
-          <p className="label col-span-4 pt-4 text-ink md:col-span-3">{h.index}</p>
-          <dl className="col-span-4 mt-4 grid grid-cols-2 gap-x-4 gap-y-4 md:col-span-9 md:mt-0 md:grid-cols-4 md:gap-x-6">
+        {/* Section title + identity row */}
+        <div className="anim-fade-up" style={d(300)}>
+          <SectionTitle num={splitIndex(h.index).num} name={splitIndex(h.index).name} as="p" />
+          <dl className="mt-5 grid grid-cols-2 gap-x-4 gap-y-4 md:grid-cols-4 md:gap-x-6">
             {[
               [h.identity.name, profile.name],
               [h.identity.role, h.role],
               [h.identity.experience, h.identity.years],
               [h.identity.location, h.location],
             ].map(([k, v], i) => (
-              <div key={k} className={`flex flex-col pt-4 ${i > 0 ? "md:border-l md:border-line md:pl-5" : ""}`}>
+              <div key={k} className={`flex flex-col ${i > 0 ? "md:border-l md:border-line md:pl-5" : ""}`}>
                 <dt className="label order-1 text-muted">{k}</dt>
                 <dd className={`order-2 mt-1.5 text-[15px] leading-6 ${i === 0 ? "font-display text-[17px] font-medium tracking-[-0.01em]" : "font-medium"}`}>{v}</dd>
               </div>
