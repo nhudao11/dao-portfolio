@@ -37,7 +37,7 @@ export const en: SiteContent = {
       lines: [
         { text: "reads the requirement and business rules", target: "about" },
         { text: "designs cases with EP · BVA · decision tables", target: "about" },
-        { text: "covers web, iOS and android", target: "projects" },
+        { text: "covers web, iOS and Android", target: "projects" },
         { text: "automates regression flows with Playwright", target: "ai-workflow" },
         { text: "investigates a failed test to its root cause", target: "process", investigate: true },
         { text: "reports clearly in Linear", target: "ai-workflow" },
@@ -52,8 +52,8 @@ export const en: SiteContent = {
     title: "Understand the product first. Then test it properly.",
     lead: "QC Engineer with 4+ years of experience testing web and mobile applications in real estate, automotive and retail distribution.",
     body: [
-      "My strength is requirement analysis and test design. I work out how a feature is supposed to behave — for every role that uses it — before I decide how to test it.",
-      "I write Playwright (TypeScript) automation tests for key regression flows and use Claude to speed up test design, scripting and defect investigation. I'm used to working in Agile/Scrum teams alongside PO, BA, designers and developers.",
+      "My strongest skills are requirement analysis and test design. Before I decide how to test a feature, I learn how it must behave for each user role.",
+      "I write Playwright (TypeScript) tests for key regression flows. I use Claude to make test design, scripting and bug investigation faster. I work in Agile/Scrum teams with product owners (POs), business analysts (BAs), designers and developers.",
     ],
     expertiseLabel: "Expertise",
     expertise: [
@@ -63,7 +63,7 @@ export const en: SiteContent = {
       { title: "System Testing", detail: "End-to-end testing of complete products: client app, agent app and internal admin tool." },
       { title: "Regression Testing", detail: "Regression runs for every release — manual and automated." },
       { title: "Automation Testing", detail: "Playwright (TypeScript) tests for key regression flows, linked to Linear tasks." },
-      { title: "Requirement Analysis", detail: "Analyzing requirements and supporting BAs in clarifying them." },
+      { title: "Requirement Analysis", detail: "Analyzing requirements and helping BAs clarify them." },
       { title: "Test Design Techniques", detail: "Equivalence Partitioning, Boundary Value Analysis, Decision Table, State Transition, Use Case." },
       { title: "AI-assisted QA", detail: "Claude for requirement analysis, test cases, test data, scripts and failure analysis." },
     ],
@@ -80,7 +80,7 @@ export const en: SiteContent = {
   ai: {
     index: "03 / AI & Workflow",
     title: "Claude drafts. I review and decide.",
-    lead: "How AI fits into my daily QA work — from reading a requirement to narrowing down why a test failed. It makes me faster; it doesn't replace judgment.",
+    lead: "This is how AI fits into my daily QA work, from reading a requirement to finding why a test failed. AI makes me faster. It does not replace my judgment.",
     railLabel: "From requirement to defect",
     diagram: {
       title: "Workflow: from requirement to defect",
@@ -109,7 +109,7 @@ export const en: SiteContent = {
     kindLabels: { input: "Input", ai: "Claude", review: "Review", run: "Run" },
     steps: [
       { title: "Requirements", note: "Specs, designs and business rules", kind: "input" },
-      { title: "AI Analysis", note: "Claude helps surface gaps and questions", kind: "ai" },
+      { title: "AI Analysis", note: "Claude helps find gaps and open questions", kind: "ai" },
       { title: "Test Design", note: "Cases and data, reviewed by me", kind: "review" },
       { title: "Automation", note: "Playwright scripts, written with Claude's help", kind: "ai" },
       { title: "Execution", note: "Manual and automated regression runs", kind: "run" },
@@ -121,13 +121,13 @@ export const en: SiteContent = {
       { title: "Test case generation", body: "Drafting test cases and scenarios that I then refine with test design techniques." },
       { title: "Test data generation", body: "Generating realistic test data for forms, listings and edge cases." },
       { title: "Playwright script assistance", body: "Writing and maintaining Playwright (TypeScript) automation scripts faster." },
-      { title: "Failed test analysis", body: "Going through failures to separate real defects from test or environment issues." },
-      { title: "Root cause investigation", body: "Narrowing down where a defect comes from so the report points developers in the right direction." },
-      { title: "AI + Linear workflow", body: "A workflow I set up to draft bug reports and improvement tasks in Linear automatically." },
+      { title: "Failed test analysis", body: "Reviewing failed tests to separate real bugs from test or environment problems." },
+      { title: "Root cause investigation", body: "Finding where a bug comes from, so the report tells developers where to look." },
+      { title: "AI + Linear workflow", body: "A workflow I created that drafts bug reports and improvement tasks in Linear automatically." },
     ],
     linearFlow: ["Finding", "Claude drafts", "Linear task"],
     noteTitle: "Not fully automated — on purpose",
-    note: "AI speeds up the drafting. The decisions — what to test, what counts as a defect, what gets reported — stay with me.",
+    note: "AI makes drafting faster. I still make the decisions: what to test, what counts as a bug and what goes into a report.",
   },
 
   experience: {
@@ -147,17 +147,19 @@ export const en: SiteContent = {
             bullets: [
               "Tested core features end to end: property search, listing creation and promotion, video reels, YouTube/TikTok integration, customer management, loan support and notifications.",
               "Tested the internal admin tool: user, agent, listing, project and content management.",
-              "Analyzed requirements, designed test cases, scenarios and checklists; ran functional, integration, system and regression testing for each release.",
+              "Analyzed requirements and designed test cases, scenarios and checklists.",
+              "Ran functional, integration, system and regression testing for each release.",
               "Wrote and maintained Playwright (TypeScript) automation tests for key regression flows, linked to Linear tasks.",
-              "Used Claude in daily QA work to generate test cases and test data, write automation scripts, analyze failed tests and narrow down root causes.",
-              "Set up an AI + Linear workflow to draft bug reports and improvement tasks automatically.",
+              "Used Claude in daily QA work to generate test cases and test data, write automation scripts, analyze failed tests and find root causes.",
+              "Created an AI + Linear workflow that drafts bug reports and improvement tasks automatically.",
             ],
           },
           {
             id: "nowauto",
             meta: "Automotive CRM · iOS, Android · Team of 6",
             bullets: [
-              "Designed and ran test cases for vehicle listing management, customer matching, customer management and notifications; reported and verified bugs, ran regression testing.",
+              "Designed and ran test cases for vehicle listing management, customer matching, customer management and notifications.",
+              "Reported and verified bugs, and ran regression testing.",
             ],
           },
         ],
@@ -173,19 +175,21 @@ export const en: SiteContent = {
             meta: "Sales & warehouse management · Team of 11",
             bullets: [
               "Wrote and ran test cases for user, customer and price management, data synchronization, goods pickup, sales, returns and reports.",
-              "Supported BA in clarifying requirements; reported and verified bugs.",
+              "Helped the BA clarify requirements.",
+              "Reported and verified bugs.",
             ],
           },
           {
             id: "yakult-kt",
             meta: "Customer engagement · Team of 15",
-            bullets: ["Tested customer, engagement activity and sales flows; supported the client during UAT and supported BA."],
+            bullets: ["Tested customer, engagement activity and sales flows.", "Supported the client during user acceptance testing (UAT), and supported the BA team."],
           },
           {
             id: "yakult-td",
             meta: "Online application & approval · Team of 4",
             bullets: [
-              "Wrote proposals and specifications, assigned tasks to developers, then tested, reported and verified bugs.",
+              "Wrote proposals and specifications, and assigned tasks to developers.",
+              "Tested the features, then reported and verified bugs.",
               "Wrote user guides and supported the client after release.",
             ],
           },
@@ -229,8 +233,8 @@ export const en: SiteContent = {
           "Analyzed requirements and designed test cases, scenarios and checklists.",
           "Ran functional, integration, system and regression testing for each release.",
           "Wrote and maintained Playwright (TypeScript) tests for key regression flows, linked to Linear tasks.",
-          "Used Claude daily for test cases, test data, automation scripts, failure analysis and root causes.",
-          "Set up an AI + Linear workflow to draft bug reports and improvement tasks.",
+          "Used Claude daily to draft test cases and test data, write automation scripts and find root causes of failed tests.",
+          "Created an AI + Linear workflow that drafts bug reports and improvement tasks.",
         ],
         scope: [
           "Property search",
@@ -262,7 +266,7 @@ export const en: SiteContent = {
         overview: "A nationwide system for Yakult Vietnam covering staff, warehouse, sales, revenue and returns.",
         responsibilities: [
           "Wrote and ran test cases across the system's modules.",
-          "Supported BA in clarifying requirements.",
+          "Helped the BA clarify requirements.",
           "Reported and verified bugs.",
         ],
         scope: ["User management", "Customer management", "Price management", "Data synchronization", "Goods pickup", "Sales", "Returns", "Reports"],
@@ -270,14 +274,14 @@ export const en: SiteContent = {
       "yakult-kt": {
         industry: "Retail & Distribution",
         type: "Customer engagement",
-        overview: "A customer engagement system for Yakult Vietnam, used for product introduction and factory tour scheduling.",
-        responsibilities: ["Tested customer, engagement activity and sales flows.", "Supported the client during UAT.", "Supported BA."],
+        overview: "A customer engagement system for Yakult Vietnam, used to introduce products and schedule factory tours.",
+        responsibilities: ["Tested customer, engagement activity and sales flows.", "Supported the client during UAT.", "Supported the BA team."],
         scope: ["Customer flows", "Engagement activities", "Sales flows", "User acceptance testing (UAT) support"],
       },
       "yakult-td": {
         industry: "Retail & Distribution",
         type: "Online application & approval",
-        overview: "An online application and approval system for Yakult Vietnam. A small team, where my role went beyond testing.",
+        overview: "An online application and approval system for Yakult Vietnam. The team was small, and my role went beyond testing.",
         responsibilities: [
           "Wrote proposals and specifications.",
           "Assigned tasks to developers.",
@@ -303,7 +307,7 @@ export const en: SiteContent = {
       no: "No",
       release: "Ready for release",
       retest: "Retest",
-      sticky: "Bugs reported and verified; improvement tasks drafted in Linear",
+      sticky: "I report and verify bugs, and draft improvement tasks in Linear",
       me: "Me · QC",
     },
     swipe: "Swipe to explore the diagram →",
@@ -311,12 +315,12 @@ export const en: SiteContent = {
       {
         title: "Understand",
         summary: "Analyze requirements and business logic.",
-        details: ["Read specs, designs and business rules", "Clarify open questions with PO and BA", "Use Claude to surface gaps in a requirement"],
+        details: ["Read specs, designs and business rules", "Clarify open questions with the PO and BA", "Use Claude to find gaps in a requirement"],
       },
       {
         title: "Investigate",
-        summary: "Identify risks, scenarios, and edge cases.",
-        details: ["Map scenarios and edge cases for each user role", "Apply EP, BVA, decision tables and state transitions", "Prepare test data, generated with Claude where useful"],
+        summary: "Identify risks, scenarios and edge cases.",
+        details: ["Map scenarios and edge cases for each user role", "Apply EP, BVA, decision tables and state transitions", "Prepare test data, with help from Claude where useful"],
       },
       {
         title: "Test & Automate",
@@ -326,7 +330,7 @@ export const en: SiteContent = {
       {
         title: "Improve",
         summary: "Investigate defects and improve product quality.",
-        details: ["Analyze failed tests and narrow down root causes", "Report and verify bugs", "Draft bug reports and improvement tasks with the AI + Linear workflow"],
+        details: ["Analyze failed tests and find root causes", "Report and verify bugs", "Draft bug reports and improvement tasks with the AI + Linear workflow"],
       },
     ],
   },
