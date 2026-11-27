@@ -86,7 +86,6 @@ export function Hero() {
           </div>
           <div className="anim-fade-up col-span-4 md:col-span-6 lg:col-span-6 lg:col-start-7 xl:col-span-5 xl:col-start-8" style={d(590)}>
             <TestRunPanel />
-            <p className="mt-4 max-w-[34rem] font-mono text-[12px] leading-[18px] text-muted">{h.run.caption}</p>
           </div>
         </div>
 
