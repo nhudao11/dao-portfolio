@@ -215,7 +215,6 @@ export const vi: SiteContent = {
       teamOf: (n) => `Team ${n} người`,
     },
     screenshots: {
-      caption: "HouseNow web & client app — ảnh chụp thật, đã làm mờ thông tin môi giới",
       webAlt: "Website HouseNow: danh sách căn hộ với bộ lọc và giá trung bình theo dự án",
       appAlt: "Client app HouseNow: video reel bất động sản kèm giá, diện tích và nút liên hệ",
     },

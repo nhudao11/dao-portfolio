@@ -159,7 +159,7 @@ export interface SiteContent {
       close: string;
       teamOf: (n: number) => string;
     };
-    screenshots: { caption: string; webAlt: string; appAlt: string };
+    screenshots: { webAlt: string; appAlt: string };
     items: Record<ProjectId, ProjectCopy>;
   };
   process: {

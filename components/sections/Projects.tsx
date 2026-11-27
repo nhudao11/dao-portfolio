@@ -147,7 +147,7 @@ function FeaturedProject({ facts, copy, labels, badge, shots }: { facts: Project
           </Reveal>
         </div>
         <Reveal delay={1} className="col-span-4 md:col-span-12 lg:col-span-7">
-          <HouseNowShowcase caption={shots.caption} webAlt={shots.webAlt} appAlt={shots.appAlt} />
+          <HouseNowShowcase webAlt={shots.webAlt} appAlt={shots.appAlt} />
         </Reveal>
       </div>
       <div className="mt-8">

@@ -219,7 +219,6 @@ export const en: SiteContent = {
       teamOf: (n) => `Team of ${n}`,
     },
     screenshots: {
-      caption: "HouseNow web & client app — real screenshots, agent details blurred",
       webAlt: "HouseNow website: apartment listings with filters and average prices by project",
       appAlt: "HouseNow client app: a property video reel with price, area and contact buttons",
     },

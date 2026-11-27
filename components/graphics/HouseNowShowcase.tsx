@@ -3,7 +3,7 @@ import webShot from "@/assets/projects/housenow-web.webp";
 import appShot from "@/assets/projects/housenow-app.webp";
 
 /** Real screenshots of HouseNow's public web and client app, framed. Agent details are blurred. */
-export function HouseNowShowcase({ caption, webAlt, appAlt }: { caption: string; webAlt: string; appAlt: string }) {
+export function HouseNowShowcase({ webAlt, appAlt }: { webAlt: string; appAlt: string }) {
   return (
     <figure>
       <div className="relative pb-10 pr-[18%] sm:pb-14">
@@ -25,7 +25,6 @@ export function HouseNowShowcase({ caption, webAlt, appAlt }: { caption: string;
           <Image src={appShot} alt={appAlt} loading="eager" sizes="(min-width: 1024px) 18vw, 32vw" className="block h-auto w-full" placeholder="blur" />
         </div>
       </div>
-      <figcaption className="label mt-3 border-t border-line pt-2 text-muted">{caption}</figcaption>
     </figure>
   );
 }
