@@ -21,7 +21,7 @@ export function SectionHeader({ index, title, lead, id }: Props) {
       <SectionTitle num={num} name={name} id={id} as="h2" />
       <Reveal className="mt-6 lg:mt-8">
         <p className="max-w-[36ch] font-display text-h2 font-medium">{title}</p>
-        {lead && <p className="mt-3 max-w-prose text-lead text-muted">{lead}</p>}
+        {lead && <p className="mt-3 text-lead text-muted">{lead}</p>}
       </Reveal>
     </header>
   );
@@ -32,14 +32,14 @@ export function SectionTitle({ num, name, id, as: Tag = "h2" }: { num: string; n
   return (
     <div>
       <div className="flex items-end justify-between gap-6">
-        <Tag id={id} className="font-display text-[clamp(40px,5.2vw,68px)] font-semibold leading-[0.95] tracking-[-0.035em]">
+        <Tag id={id} className="font-display text-[clamp(30px,3.4vw,46px)] font-semibold leading-[1.05] tracking-[-0.03em]">
           {name}
         </Tag>
         <span className="label pb-1.5 text-muted" aria-hidden>
           {num}
         </span>
       </div>
-      <div className="mt-5 border-t-2 border-ink lg:mt-6" />
+      <div className="mt-4 border-t-2 border-ink lg:mt-5" />
     </div>
   );
 }
