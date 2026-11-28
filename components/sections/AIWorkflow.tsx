@@ -82,7 +82,7 @@ export function AIWorkflow() {
             <span className="mt-1.5 h-3 w-3 bg-orange" aria-hidden />
             <div>
               <p className="font-semibold">{a.noteTitle}</p>
-              <p className="mt-1 max-w-prose text-muted">{a.note}</p>
+              <p className="mt-1 text-muted">{a.note}</p>
             </div>
           </Reveal>
         </div>
